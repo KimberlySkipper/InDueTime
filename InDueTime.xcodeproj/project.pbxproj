@@ -321,6 +321,7 @@
 				2C13ED561E09C0B200A2C662 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

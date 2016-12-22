@@ -37,6 +37,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYB-2b-R9k">
                                             <rect key="frame" x="344" y="11" width="16" height="22"/>
                                             <state key="normal" image="checkbox.png"/>
+                                            <connections>
+                                                <action selector="boxWasPressed:" destination="8BQ-rv-6Kh" eventType="touchUpInside" id="WmP-nS-bB6"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

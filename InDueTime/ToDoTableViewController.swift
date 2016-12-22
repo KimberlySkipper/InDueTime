@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 
+
 class ToDoTableViewController: UITableViewController, UITextFieldDelegate
 
 {
+   // var checkedImage = "checkbox-pressed.png"
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     var thingsToDo = [ToDo]()
 
@@ -67,7 +69,6 @@ class ToDoTableViewController: UITableViewController, UITextFieldDelegate
         {
             cell.toDoTitleTextField.text = anItem.title
         }
-
         return cell
     }
     
@@ -81,12 +82,23 @@ class ToDoTableViewController: UITableViewController, UITextFieldDelegate
     
     // MARK: - Action Handlers
     
-    @IBAction func boxWasChecked(_ sender: UIButton)
+    @IBAction func boxWasPressed(_ sender: UIButton)
     {
         let contentView = sender.superview
         let cell = contentView?.superview as! ThingsToDoTableViewCell
         let indexPath = tableView.indexPath(for: cell)
         let anItem = thingsToDo[indexPath!.row]
+        if !anItem.done
+        {
+            anItem.done = true
+            sender.setImage(UIImage(named: "checkbox-pressed"), for: .normal)
+        }
+        else
+        {
+            anItem.done = false
+            sender.setImage(UIImage(named: "checkbox"), for: .normal)
+        }
+        saveContext()
     }
 
    
@@ -152,6 +164,5 @@ class ToDoTableViewController: UITableViewController, UITextFieldDelegate
             }
         }
     }
-
    
 }//end class

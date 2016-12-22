@@ -12,7 +12,7 @@ class ThingsToDoTableViewCell: UITableViewCell
 {
     @IBOutlet weak var toDoTitleTextField: UITextField!
     @IBOutlet weak var checkboxButton: UIButton!
-    
+  //  @IBOutlet weak var checkboxImage: UIImage!
 
     override func awakeFromNib()
     {
